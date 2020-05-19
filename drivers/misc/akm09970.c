@@ -192,7 +192,7 @@ static int akm09970_active(struct akm09970_soc_ctrl *c_ctrl, bool on)
 	int rc = 0;
 	uint8_t mode = 0x00;
 
-	pr_info("akm sensor %s\n", on ? "on" : "off");
+	pr_debug("akm sensor %s\n", on ? "on" : "off");
 
 	if (!atomic_read(&c_ctrl->power_enabled) && on) {
 		rc = akm09970_power_up(c_ctrl);
@@ -239,7 +239,7 @@ static int akm09970_active(struct akm09970_soc_ctrl *c_ctrl, bool on)
 
 		akm09970_power_down(c_ctrl);
 	} else {
-		pr_info("The same power state, do nothing!");
+		pr_debug("The same power state, do nothing!");
 	}
 
 	return 0;
