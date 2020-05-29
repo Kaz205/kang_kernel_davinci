@@ -111,7 +111,7 @@ static int snd_ctl_elem_info_compat(struct snd_ctl_file *ctl,
 	err = snd_power_wait(ctl->card, SNDRV_CTL_POWER_D0);
 	if (err < 0)
 		goto error;
-		err = snd_ctl_elem_info(ctl, &data);
+	err = snd_ctl_elem_info(ctl, &data);
 	if (err < 0)
 		goto error;
 	/* restore info to 32bit */
@@ -405,7 +405,7 @@ static int snd_ctl_elem_add_compat(struct snd_ctl_file *file,
 	err = snd_ctl_elem_add(file, &data, replace);
  error:
 	return err;
-}  
+}
 
 enum {
 	SNDRV_CTL_IOCTL_ELEM_LIST32 = _IOWR('U', 0x10, struct snd_ctl_elem_list32),
