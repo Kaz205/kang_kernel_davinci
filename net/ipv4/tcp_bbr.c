@@ -301,6 +301,7 @@ static u32 bbr_min_tso_segs(struct sock *sk)
 static u32 bbr_tso_segs_goal(struct sock *sk)
 {
 	struct tcp_sock *tp = tcp_sk(sk);
+	struct bbr *bbr = inet_csk_ca(sk);
 	u32 segs, bytes;
 
 	/* Sort of tcp_tso_autosize() but ignoring
