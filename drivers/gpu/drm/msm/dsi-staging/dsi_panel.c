@@ -5096,7 +5096,7 @@ static int panel_disp_param_send_lock(struct dsi_panel *panel, int param)
 
 	mutex_lock(&panel->panel_lock);
 
-	pr_info("[LCD] param_type = 0x%x\n", param);
+	pr_debug("[LCD] param_type = 0x%x\n", param);
 
 	if (!panel->panel_initialized
 		&& (param & 0x0F000000) != DISPPARAM_FOD_BACKLIGHT_ON
@@ -5265,7 +5265,7 @@ static int panel_disp_param_send_lock(struct dsi_panel *panel, int param)
 		rc = dsi_panel_tx_cmd_set(panel, DSI_CMD_SET_DISP_ACL_L3);
 		break;
 	case DISPPARAM_ACL_OFF:
-		pr_info("acl off\n");
+		pr_debug("acl off\n");
 		rc = dsi_panel_tx_cmd_set(panel, DSI_CMD_SET_DISP_ACL_OFF);
 		break;
 	default:
