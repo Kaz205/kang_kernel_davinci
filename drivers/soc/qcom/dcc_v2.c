@@ -341,7 +341,7 @@ static int __dcc_ll_cfg(struct dcc_drvdata *drvdata, int curr_list)
 					entry->write_val, sram_offset);
 			if (ret)
 				goto overstep;
-				sram_offset += 4;
+			sram_offset += 4;
 			addr = 0;
 			break;
 		}
