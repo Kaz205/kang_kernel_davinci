@@ -311,7 +311,7 @@ static u32 bbr_tso_segs_goal(struct sock *sk)
 		      GSO_MAX_SIZE - 1 - MAX_TCP_HEADER);
 	segs = max_t(u32, bytes / tp->mss_cache, bbr_min_tso_segs(sk));
 
-	bbr->tso_segs_goal = min(segs, 0x7FU);
+	return min(segs, 0x7FU);
 }
 
 /* Save "last known good" cwnd so we can restore it after losses or PROBE_RTT */
